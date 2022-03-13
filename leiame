@@ -34,3 +34,28 @@ npm install @mui/icons-material
 
 // usando yarn
 yarn add @mui/icons-material
+
+
+
+
+
+Instalação Eslint .eslintrc.json
+npx eslint --init
+
+ To check syntax, find problems, and enforce code style
+ JavaScript modules (import/export)
+ React
+ ? Does your project use TypeScript? » --> / Yes
+  Browser
+  > Answer questions about your style
+  JSON
+
+  > Tabs
+  Spaces
+
+  > Double
+> Windows
+? Do you require semicolons? » No / Yes
+
+
+

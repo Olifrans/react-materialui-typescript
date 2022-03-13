@@ -8,7 +8,9 @@ export const App = () => {
       <BrowserRouter>
         <div className="App">
           <AppRouter />
-          Olifrans Olifrans
+          <div>
+            <h1>Olifrans Olifrans</h1>
+          </div>
         </div>
       </BrowserRouter>
     </AppThemeProvider>
