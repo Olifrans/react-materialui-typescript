@@ -1,8 +1,16 @@
 npx create-react-app react-materialui-typescript --template typescript
 
 
-https://www.youtube.com/watch?v=L5nJhLkvBxU&list=PL29TaWXah3iaqOejItvW--TaFr9NcruyQ&index=2
-
 
 Instalação do Yarn:
 npm install --global yarn
+
+
+
+Instalação React Router 
+https://reactrouter.com/docs/en/v6/getting-started/overview
+
+npm install react-router-dom@6
+
+yarn add react-router-dom@6
+
