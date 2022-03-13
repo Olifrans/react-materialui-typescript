@@ -11,6 +11,26 @@ Instalação React Router
 https://reactrouter.com/docs/en/v6/getting-started/overview
 
 npm install react-router-dom@6
-
 yarn add react-router-dom@6
 
+
+
+
+Instalação Material-UI
+https://mui.com/
+
+// usando npm
+npm install @mui/material @emotion/react @emotion/styled
+
+// usando yarn
+yarn add @mui/material @emotion/react @emotion/styled
+
+
+Ícones SVG
+Para usar os ícones SVG pré-definidos do Material, como os encontrados na demonstração de ícones, você deve primeiro instalar o pacote @mui/icons-material:
+
+// usando npm
+npm install @mui/icons-material
+
+// usando yarn
+yarn add @mui/icons-material
