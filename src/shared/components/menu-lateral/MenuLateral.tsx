@@ -1,18 +1,30 @@
-import { Drawer, useTheme, Avatar, Divider, Icon } from "@mui/material";
+import {
+  Drawer,
+  useTheme,
+  Avatar,
+  Divider,
+  Icon,
+  useMediaQuery,
+} from "@mui/material";
 import { Box } from "@mui/system";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-
-
+import { useDrawerContext } from "../../contexts";
 
 export const MenuLateral: React.FC = ({ children }) => {
   const theme = useTheme();
+  const smDown = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const { isDrawerOpen, toggleDrawerOpen } = useDrawerContext();
 
   return (
     <>
-      <Drawer open={true} variant="permanent">
+      <Drawer
+        open={isDrawerOpen}
+        variant={smDown ? "temporary" : "permanent"}
+        onClose={toggleDrawerOpen}>
         <Box
           width={theme.spacing(28)}
           height="100%"
@@ -38,7 +50,7 @@ export const MenuLateral: React.FC = ({ children }) => {
             <List component="nav">
               <ListItemButton>
                 <ListItemIcon>
-                    <Icon>home</Icon>                  
+                  <Icon>home</Icon>
                 </ListItemIcon>
                 <ListItemText primary="Home" />
               </ListItemButton>
@@ -47,7 +59,7 @@ export const MenuLateral: React.FC = ({ children }) => {
         </Box>
       </Drawer>
 
-      <Box height="100vh" marginLeft={theme.spacing(28)}>
+      <Box height="100vh" marginLeft={smDown ? 0 : theme.spacing(28)}>
         {children}
       </Box>
     </>

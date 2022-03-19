@@ -70,3 +70,13 @@ continuar estudos na posição inicial
 https://www.youtube.com/watch?v=bFxJ0-F2Hl4&list=PL29TaWXah3iaqOejItvW--TaFr9NcruyQ&index=10
 
 Test-Comit
+
+
+
+
+corrigindo erros! yarn run eslint ./src/ --fix yarn eslint ./src/ --fix
+
+"rules": { "react/react-in-jsx-scope": "off", do react "indent": [ "error", 4 ],
+
+    validando:
+    yarn eslint ./src/ --fix
