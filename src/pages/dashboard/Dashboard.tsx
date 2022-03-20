@@ -2,10 +2,8 @@ import { LayoutBaseDepagina } from "../../shared/layouts";
 
 export const Dashboard = () => {
   return (
-    <LayoutBaseDepagina titulo="Home">
-      <div>
-        <p>A casa da benção</p>
-      </div>
+    <LayoutBaseDepagina titulo="Home" barraDeFerramentas={<>Barra de Ferramentas</>}>
+      A casa da benção     
     </LayoutBaseDepagina>
   );
 };

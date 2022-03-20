@@ -7,17 +7,21 @@ import {
   Theme,
 } from "@mui/material";
 import { Box } from "@mui/system";
+import { ReactNode } from "react";
 import { useDrawerContext } from "../contexts";
 
 interface ILayoutBaseDepagina {
   titulo: string;
+  barraDeFerramentas: ReactNode;
 }
 
 export const LayoutBaseDepagina: React.FC<ILayoutBaseDepagina> = ({
   children,
   titulo,
+  barraDeFerramentas,
 }) => {
   const smDown = useMediaQuery((theme: Theme) => theme.breakpoints.down("sm"));
+  const mdDown = useMediaQuery((theme: Theme) => theme.breakpoints.down("md"));
   const theme = useTheme();
 
   const { toggleDrawerOpen } = useDrawerContext();
@@ -28,8 +32,8 @@ export const LayoutBaseDepagina: React.FC<ILayoutBaseDepagina> = ({
         padding={1}
         display="flex"
         alignItems="center"
-        height={theme.spacing(12)}
         gap={1}
+        height={theme.spacing(smDown ? 6 : mdDown ? 8 : 12)}
       >
         {smDown && (
           <IconButton onClick={toggleDrawerOpen}>
@@ -37,12 +41,21 @@ export const LayoutBaseDepagina: React.FC<ILayoutBaseDepagina> = ({
           </IconButton>
         )}
 
-        <Typography variant="h5">{titulo}</Typography>
+        <Typography
+          overflow="hidden"
+          whiteSpace="nowrap"
+          textOverflow="ellipsis"
+          variant={smDown ? "h5" : mdDown ? "h4" : "h3"}
+        >
+          {titulo}
+        </Typography>
       </Box>
 
-      <Box>Barra de Ferramentas</Box>
+      {barraDeFerramentas && <Box>{barraDeFerramentas}</Box>}
 
-      <Box>{children}</Box>
+      <Box flex={1} overflow="auto">
+        {children}
+      </Box>
     </Box>
   );
 };
