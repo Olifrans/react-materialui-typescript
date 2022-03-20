@@ -22,4 +22,9 @@ export const DarkTheme = createTheme({
       default: "#202124",
     },
   },
+  typography: {
+    allVariants: {
+      color: "white",
+    },
+  },
 });
