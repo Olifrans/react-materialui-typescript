@@ -93,23 +93,23 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
         !mostrarBotaoSalvarEFecharCarregando &&
         !smDown &&
         !mdDown && (
-          <Button
-            color="primary"
-            disableElevation
-            variant="outlined"
-            onClick={aoClicarEmSalvarEFechar}
-            startIcon={<Icon>save</Icon>}
+        <Button
+          color="primary"
+          disableElevation
+          variant="outlined"
+          onClick={aoClicarEmSalvarEFechar}
+          startIcon={<Icon>save</Icon>}
+        >
+          <Typography
+            variant="button"
+            whiteSpace="nowrap"
+            textOverflow="ellipsis"
+            overflow="hidden"
           >
-            <Typography
-              variant="button"
-              whiteSpace="nowrap"
-              textOverflow="ellipsis"
-              overflow="hidden"
-            >
               Salvar e voltar
-            </Typography>
-          </Button>
-        )}
+          </Typography>
+        </Button>
+      )}
       {mostrarBotaoSalvarEFecharCarregando && !smDown && !mdDown && (
         <Skeleton width={180} height={60} />
       )}
@@ -161,8 +161,8 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
           mostrarBotaoApagar ||
           mostrarBotaoSalvar ||
           mostrarBotaoSalvarEFechar) && (
-          <Divider variant="middle" orientation="vertical" />
-        )}
+        <Divider variant="middle" orientation="vertical" />
+      )}
 
       {mostrarBotaoVoltar && !mostrarBotaoVoltarCarregando && (
         <Button

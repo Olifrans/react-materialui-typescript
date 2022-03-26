@@ -8,11 +8,8 @@ https://www.youtube.com/watch?v=BLmEyAzu5qc&list=PL29TaWXah3iaqOejItvW--TaFr9Ncr
 
 npx create-react-app react-materialui-typescript --template typescript
 
-
-
 Instalação do Yarn:
 npm install --global yarn
-
 
 
 Instalação React Router 
@@ -20,8 +17,6 @@ https://reactrouter.com/docs/en/v6/getting-started/overview
 
 npm install react-router-dom@6
 yarn add react-router-dom@6
-
-
 
 
 Instalação Material-UI
@@ -44,9 +39,6 @@ npm install @mui/icons-material
 yarn add @mui/icons-material
 
 
-
-
-
 Instalação Eslint .eslintrc.json
 npx eslint --init
 
@@ -65,11 +57,7 @@ npx eslint --init
 
 
 
-
-
-
 Instalação Material-UI Component Drawer
-
 https://mui.com/pt/components/drawers/#main-content
 
 
