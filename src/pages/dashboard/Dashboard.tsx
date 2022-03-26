@@ -8,9 +8,9 @@ export const Dashboard = () => {
       titulo="Home"
       barraDeFerramentas={
         <FerramentasDeDetalhe mostrarBotaoSalvarEFechar />
-        // <FerramentasDaListagem 
-        //   mostrarInputBusca 
-        //   textoBotaoNovo='Nova' 
+        // <FerramentasDaListagem
+        //   mostrarInputBusca
+        //   textoBotaoNovo='Nova'
         // />
       }
     >

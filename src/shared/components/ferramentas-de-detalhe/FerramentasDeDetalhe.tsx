@@ -1,12 +1,4 @@
-import {
-  Box,
-  TextField,
-  Button,
-  Paper,
-  useTheme,
-  Icon,
-  Divider,
-} from "@mui/material";
+import { Box, Button, Paper, useTheme, Icon, Divider } from "@mui/material";
 
 interface IFerramentasDeDetalheProps {
   textoBotaoNovo?: string;
@@ -113,24 +105,5 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
         </Button>
       )}
     </Box>
-
-    // <Box
-
-    // >
-    //   {mostrarInputBusca && (
-    //     <TextField
-    //       size="small"
-    //       value={textoDaBusca}
-    //       placeholder="Pesquisar..."
-    //       onChange={(e) => aoMudarTextoDeBusca?.(e.target.value)}
-    //     />
-    //   )}
-
-    //   <Box flex={1} display="flex" justifyContent="end">
-    //     {mostrarBotaoNovo && (
-
-    //     )}
-    //   </Box>
-    // </Box>
   );
 };
