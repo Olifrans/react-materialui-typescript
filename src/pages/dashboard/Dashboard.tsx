@@ -1,4 +1,5 @@
-import { FerramentasDaListagem } from "../../shared/components";
+//import { FerramentasDaListagem, FerramentasDeDetalhe } from "../../shared/components";
+import { FerramentasDeDetalhe } from "../../shared/components";
 import { LayoutBaseDepagina } from "../../shared/layouts";
 
 export const Dashboard = () => {
@@ -6,10 +7,11 @@ export const Dashboard = () => {
     <LayoutBaseDepagina
       titulo="Home"
       barraDeFerramentas={
-        <FerramentasDaListagem 
-          mostrarInputBusca 
-          textoBotaoNovo='Nova' 
-        />
+        <FerramentasDeDetalhe />
+        // <FerramentasDaListagem 
+        //   mostrarInputBusca 
+        //   textoBotaoNovo='Nova' 
+        // />
       }
     >
       A casa da benção
