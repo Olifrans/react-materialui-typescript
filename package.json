@@ -1,6 +1,11 @@
 {
     "name": "react-materialui-typescript",
     "version": "0.1.0",
+
+    "engines": {
+        "node": "17.5.0"
+      },
+
     "private": true,
     "scripts": {
         "start": "react-scripts start",
