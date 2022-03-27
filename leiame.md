@@ -75,3 +75,27 @@ corrigindo erros! yarn run eslint ./src/ --fix yarn eslint ./src/ --fix
     # JSON Server
     npm i json-server
     yarn add json-server
+
+
+
+
+axios API
+https://www.npmjs.com/package/axios
+
+
+Installing
+Using npm:
+
+$ npm install axios
+Using bower:
+
+$ bower install axios
+Using yarn:
+
+$ yarn add axios
+Using jsDelivr CDN:
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+Using unpkg CDN:
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></scrip
