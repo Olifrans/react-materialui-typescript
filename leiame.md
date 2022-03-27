@@ -1,5 +1,6 @@
 
 continuar estudos na posição inicial
+
 https://www.youtube.com/watch?v=BLmEyAzu5qc&list=PL29TaWXah3iaqOejItvW--TaFr9NcruyQ&index=20
 
 
@@ -68,3 +69,9 @@ corrigindo erros! yarn run eslint ./src/ --fix yarn eslint ./src/ --fix
 
     validando:
     yarn eslint ./src/ --fix
+
+
+
+    # JSON Server
+    npm i json-server
+    yarn add json-server

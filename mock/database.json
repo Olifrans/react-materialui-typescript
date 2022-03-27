@@ -1,0 +1,17 @@
+{
+    "pessoas": [
+        {
+            "id": 1,
+            "nome": "Olifrans", 
+            "sobrenome": "Oliveira" 
+        }
+    ],
+
+    "endereco": [
+        {
+            "id": 1,
+            "Rua": "Gali", 
+            "cep": "08567-230" 
+        }
+    ]
+}
