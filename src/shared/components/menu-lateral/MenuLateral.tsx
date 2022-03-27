@@ -14,7 +14,6 @@ import ListItemText from "@mui/material/ListItemText";
 import { useAppThemeContext, useDrawerContext } from "../../contexts";
 import { useMatch, useNavigate, useResolvedPath } from "react-router-dom";
 
-
 interface IListItemLinkProps {
   to: string;
   icon: string;
@@ -97,10 +96,6 @@ export const MenuLateral: React.FC = ({ children }) => {
               ))}
             </List>
           </Box>
-
-          
-
-
 
           <Box>
             <List component="nav">

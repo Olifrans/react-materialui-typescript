@@ -3,7 +3,7 @@ import { createContext, useCallback, useContext, useState } from "react";
 interface IDrawerOptions {
   icon: string;
   path: string;
-  label: string;  
+  label: string;
 }
 
 interface IDrawerContextData {
@@ -20,7 +20,6 @@ export const useDrawerContext = () => {
 };
 
 export const DrawerProvider: React.FC = ({ children }) => {
-  
   const [drawerOptions, setDrawerOptions] = useState<IDrawerOptions[]>([]);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -37,7 +36,12 @@ export const DrawerProvider: React.FC = ({ children }) => {
 
   return (
     <DrawerContext.Provider
-      value={{ isDrawerOpen, drawerOptions, toggleDrawerOpen, setDrawerOptions: handleSetDrawerOptions }}
+      value={{
+        isDrawerOpen,
+        drawerOptions,
+        toggleDrawerOpen,
+        setDrawerOptions: handleSetDrawerOptions,
+      }}
     >
       {children}
     </DrawerContext.Provider>
