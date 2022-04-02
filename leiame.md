@@ -1,8 +1,6 @@
 
 continuar estudos na posição inicial
-
-https://www.youtube.com/watch?v=L1H_Nwll6m8&list=PL29TaWXah3iaqOejItvW--TaFr9NcruyQ&index=22
-
+https://www.youtube.com/watch?v=KSinhtsr6q8&list=PL29TaWXah3iaqOejItvW--TaFr9NcruyQ&index=27
 
 
 
