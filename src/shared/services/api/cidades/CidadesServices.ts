@@ -1,14 +1,14 @@
 import { Api } from "../axios-config";
 import { Environment } from "../../../environment";
 
-interface IListagemcidade {
+export interface IListagemCidade {
   id: number;
   nomeCidade: string;
   estado: string;
   pessoaId: number;
 }
 
-interface IDetalhecidade {
+export interface IDetalheCidade {
   id: number;
   nomeCidade: string;
   estado: string;
@@ -16,7 +16,7 @@ interface IDetalhecidade {
 }
 
 type TCidadeComTotalCount = {
-  data: IListagemcidade[];
+  data: IListagemCidade[];
   totalCount: number;
 };
 
@@ -46,7 +46,7 @@ const getAll = async (
   }
 };
 
-const getById = async (id: number): Promise<IDetalhecidade | Error> => {
+const getById = async (id: number): Promise<IDetalheCidade | Error> => {
   try {
     const { data } = await Api.get(`/cidades/${id}`);
 
@@ -65,10 +65,10 @@ const getById = async (id: number): Promise<IDetalhecidade | Error> => {
 };
 
 const create = async (
-  dados: Omit<IDetalhecidade, "id">
+  dados: Omit<IDetalheCidade, "id">
 ): Promise<number | Error> => {
   try {
-    const { data } = await Api.post<IDetalhecidade>("/cidades", dados);
+    const { data } = await Api.post<IDetalheCidade>("/cidades", dados);
 
     if (data) {
       return data.id;
@@ -86,7 +86,7 @@ const create = async (
 
 const updateById = async (
   id: number,
-  dados: IDetalhecidade
+  dados: IDetalheCidade
 ): Promise<void | Error> => {
   try {
     await Api.put(`/cidades/${id}`, dados);
