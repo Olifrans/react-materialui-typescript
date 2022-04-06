@@ -1,6 +1,5 @@
 import { FerramentasDaListagem } from "../../shared/components";
 import { LayoutBaseDepagina } from "../../shared/layouts";
-
 import {
   Table,
   TableContainer,
@@ -10,7 +9,6 @@ import {
   TableRow,
   Paper,
 } from "@mui/material";
-
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import {
@@ -22,7 +20,6 @@ import { useDebounce } from "../../shared/hooks";
 export const ListagemDeCidade: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const { debounce } = useDebounce();
-
   const [rows, setRows] = useState<IListagemCidade[]>([]);
   const [totalCount, setTotalCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
@@ -64,7 +61,11 @@ export const ListagemDeCidade: React.FC = () => {
         />
       }
     >
-      <TableContainer component={Paper} variant="outlined" sx={{ m:1, width: 'auto'}}>
+      <TableContainer
+        component={Paper}
+        variant="outlined"
+        sx={{ m: 1, width: "auto" }}
+      >
         <Table>
           <TableHead>
             <TableRow>
