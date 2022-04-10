@@ -87,6 +87,10 @@ export const ListagemDeCidade: React.FC = () => {
             ))}
           </TableBody>
 
+          {totalCount === 0 && !isLoading && (
+            <caption>{Environment.LISTAGEM_VAZIA}</caption>
+          )}
+
           <TableFooter>
             {isLoading && (
               <TableRow>
@@ -96,9 +100,6 @@ export const ListagemDeCidade: React.FC = () => {
               </TableRow>
             )}
           </TableFooter>
-
-
-
         </Table>
       </TableContainer>
     </LayoutBaseDepagina>
