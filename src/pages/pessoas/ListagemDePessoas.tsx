@@ -20,6 +20,9 @@ import { LayoutBaseDepagina } from "../../shared/layouts";
 import { useDebounce } from "../../shared/hooks";
 import { Environment } from "../../shared/environment";
 
+
+
+
 export const ListagemDePessoas: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const { debounce } = useDebounce();
@@ -89,8 +92,7 @@ export const ListagemDePessoas: React.FC = () => {
             ))}
           </TableBody>
 
-
-          {totalCount === 0 && !isLoading &&(
+          {totalCount === 0 && !isLoading && (
             <caption>{Environment.LISTAGEM_VAZIA}</caption>
           )}
 
@@ -103,7 +105,6 @@ export const ListagemDePessoas: React.FC = () => {
               </TableRow>
             )}
           </TableFooter>
-
         </Table>
       </TableContainer>
     </LayoutBaseDepagina>
