@@ -8,6 +8,8 @@ import {
   TableCell,
   TableRow,
   Paper,
+  TableFooter,
+  LinearProgress,
 } from "@mui/material";
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
@@ -84,6 +86,19 @@ export const ListagemDeCidade: React.FC = () => {
               </TableRow>
             ))}
           </TableBody>
+
+          <TableFooter>
+            {isLoading && (
+              <TableRow>
+                <TableCell colSpan={3}>
+                  <LinearProgress variant="indeterminate" />
+                </TableCell>
+              </TableRow>
+            )}
+          </TableFooter>
+
+
+
         </Table>
       </TableContainer>
     </LayoutBaseDepagina>

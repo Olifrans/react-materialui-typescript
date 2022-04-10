@@ -8,6 +8,8 @@ import {
   TableCell,
   TableRow,
   Paper,
+  TableFooter,
+  LinearProgress,
 } from "@mui/material";
 import {
   IListagemPessoa,
@@ -85,6 +87,17 @@ export const ListagemDePessoas: React.FC = () => {
               </TableRow>
             ))}
           </TableBody>
+
+          <TableFooter>
+            {isLoading && (
+              <TableRow>
+                <TableCell colSpan={3}>
+                  <LinearProgress variant="indeterminate" />
+                </TableCell>
+              </TableRow>
+            )}
+          </TableFooter>
+          
         </Table>
       </TableContainer>
     </LayoutBaseDepagina>
