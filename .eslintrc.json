@@ -25,16 +25,9 @@
             "error",
             2
         ],
-
-        // "indent": [
-        //     "error",
-        //     4
-        // ],
-
         "linebreak-style": [
             "error",
-            //"windows"
-            "linux"
+            "windows"
         ],
         "quotes": [
             "error",
@@ -44,11 +37,7 @@
             "error",
             "always"
         ],
-
-        //Corrigir erro de ref a obrigação da importação global do React (apartir da versão 17 não é mais obrigado)
-        "react/react-in-jsx-scope": "off",
-
-        //Desativandop a verificação de propriedades do Raect 
-        "react/prop-types": "off"
+        "react/prop-types": "off",
+        "react/react-in-jsx-scope":"off"
     }
 }

@@ -77,8 +77,14 @@ export const MenuLateral: React.FC = ({ children }) => {
             <Avatar
               sx={{ height: theme.spacing(12), width: theme.spacing(12) }}
               alt="Olifrans"
-              src="https://media-exp1.licdn.com/dms/image/C4E03AQHQO_-QbxYi8Q/profile-displayphoto-shrink_100_100/0/1632957241631?e=1652918400&v=beta&t=9z1zIxkYa0Vys0sv5aEjVHExNLLfK8Hh5Ku3EMUbMgw"
+              src="https://media-exp1.licdn.com/dms/image/C4D03AQEMsFF44Zk6iA/profile-displayphoto-shrink_200_200/0/1649161948713?e=1655337600&v=beta&t=Ikkh6A0EgPRD-7Rgc8bznw6V44EtuWhRo859G01mv8Y"
             />
+
+            {/* <Avatar
+              sx={{ height: theme.spacing(12), width: theme.spacing(12) }}
+              alt="Olifrans"
+              src="https://media-exp1.licdn.com/dms/image/C4E03AQHQO_-QbxYi8Q/profile-displayphoto-shrink_100_100/0/1632957241631?e=1652918400&v=beta&t=9z1zIxkYa0Vys0sv5aEjVHExNLLfK8Hh5Ku3EMUbMgw"
+            /> */}
           </Box>
 
           <Divider />
