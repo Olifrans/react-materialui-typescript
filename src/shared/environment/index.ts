@@ -2,7 +2,7 @@ export const Environment = {
   /**
    * Quantidade de linhas a ser carregadas nas listagens, por padrão
    */
-  LIMETE_DElINHAS: 10,
+  LIMETE_DElINHAS: 7,
 
   /**
    * Placeholder exibido nos imputs

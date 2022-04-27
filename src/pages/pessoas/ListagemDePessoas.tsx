@@ -10,6 +10,7 @@ import {
   Paper,
   TableFooter,
   LinearProgress,
+  Pagination,
 } from "@mui/material";
 import {
   IListagemPessoa,
@@ -19,9 +20,6 @@ import { FerramentasDaListagem } from "../../shared/components";
 import { LayoutBaseDepagina } from "../../shared/layouts";
 import { useDebounce } from "../../shared/hooks";
 import { Environment } from "../../shared/environment";
-
-
-
 
 export const ListagemDePessoas: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -35,11 +33,18 @@ export const ListagemDePessoas: React.FC = () => {
     return searchParams.get("busca") || "";
   }, [searchParams]);
 
+  //-------------------------Pagination
+  const pagina = useMemo(() => {
+    return Number(searchParams.get("pagina") || "1");
+  }, [searchParams]);
+  //----------------------End Pagination
+
   useEffect(() => {
     setIsLoading(true);
 
     debounce(() => {
-      PessoasServices.getAll(1, busca).then((result) => {
+      //-------------------------Pagination
+      PessoasServices.getAll(pagina, busca).then((result) => {
         setIsLoading(false);
 
         if (result instanceof Error) {
@@ -52,7 +57,8 @@ export const ListagemDePessoas: React.FC = () => {
         }
       });
     });
-  }, [busca]);
+    //-------------------------Pagination
+  }, [busca, pagina]);
 
   return (
     <LayoutBaseDepagina
@@ -60,10 +66,11 @@ export const ListagemDePessoas: React.FC = () => {
       barraDeFerramentas={
         <FerramentasDaListagem
           mostrarInputBusca
-          textoBotaoNovo="Nova"
           textoDaBusca={busca}
+          textoBotaoNovo="Nova"
+          //-------------------------Pagination
           aoMudarTextoDeBusca={(texto) =>
-            setSearchParams({ busca: texto }, { replace: true })
+            setSearchParams({ busca: texto, pagina: "1" }, { replace: true })
           }
         />
       }
@@ -104,6 +111,25 @@ export const ListagemDePessoas: React.FC = () => {
                 </TableCell>
               </TableRow>
             )}
+
+            {/*-------------------------Pagination*/}
+            {totalCount > 0 && totalCount > Environment.LIMETE_DElINHAS && (
+              <TableRow>
+                <TableCell colSpan={3}>
+                  <Pagination
+                    page={pagina}
+                    count={Math.ceil(totalCount / Environment.LIMETE_DElINHAS)}
+                    onChange={(_, newPage) =>
+                      setSearchParams(
+                        { busca, pagina: newPage.toString() },
+                        { replace: true }
+                      )
+                    }
+                  />
+                </TableCell>
+              </TableRow>
+            )}
+            {/*-------------------------End Pagination*/}
           </TableFooter>
         </Table>
       </TableContainer>

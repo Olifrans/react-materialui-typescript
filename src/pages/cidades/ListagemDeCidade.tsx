@@ -10,6 +10,7 @@ import {
   Paper,
   TableFooter,
   LinearProgress,
+  Pagination,
 } from "@mui/material";
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
@@ -33,11 +34,17 @@ export const ListagemDeCidade: React.FC = () => {
     return searchParams.get("busca") || "";
   }, [searchParams]);
 
+  //-------------------------Pagination
+  const pagina = useMemo(() => {
+    return Number(searchParams.get("pagina") || "1");
+  }, [searchParams]);
+  //----------------------End Pagination
+
   useEffect(() => {
     setIsLoading(true);
 
     debounce(() => {
-      CidadesServices.getAll(1, busca).then((result) => {
+      CidadesServices.getAll(pagina, busca).then((result) => {
         setIsLoading(false);
 
         if (result instanceof Error) {
@@ -50,18 +57,20 @@ export const ListagemDeCidade: React.FC = () => {
         }
       });
     });
-  }, [busca]);
+  }, [busca, pagina]);
 
   return (
     <LayoutBaseDepagina
       titulo="Listagem de cidades"
       barraDeFerramentas={
         <FerramentasDaListagem
-          mostrarInputBusca
-          textoBotaoNovo="Nova"
+          mostrarInputBusca          
           textoDaBusca={busca}
+          textoBotaoNovo="Nova"
+
+          //-------------------------Pagination
           aoMudarTextoDeBusca={(texto) =>
-            setSearchParams({ busca: texto }, { replace: true })
+            setSearchParams({ busca: texto, pagina: "1" }, { replace: true })
           }
         />
       }
@@ -102,6 +111,26 @@ export const ListagemDeCidade: React.FC = () => {
                 </TableCell>
               </TableRow>
             )}
+
+            {/*-------------------------Pagination*/}
+            {totalCount > 0 && totalCount > Environment.LIMETE_DElINHAS && (
+              <TableRow>
+                <TableCell colSpan={3}>
+                  <Pagination
+                    page={pagina}
+                    count={Math.ceil(totalCount / Environment.LIMETE_DElINHAS)}
+                    onChange={(_, newPage) =>
+                      setSearchParams(
+                        { busca, pagina: newPage.toString() },
+                        { replace: true }
+                      )
+                    }
+                  />
+                </TableCell>
+              </TableRow>
+            )}
+            {/*-------------------------End Pagination*/}
+
           </TableFooter>
         </Table>
       </TableContainer>
