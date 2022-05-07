@@ -5,17 +5,13 @@ import { LayoutBaseDepagina } from "../../shared/layouts";
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { PessoasServices } from "../../shared/services/api/pessoas/PessoasServices";
-import { LinearProgress } from "@mui/material";
+import { LinearProgress, TextField } from "@mui/material";
+import { Form } from "@unform/web";
+import { VTextField } from "../../shared/forms";
 
 export const DetalheDePessoas: React.FC = () => {
   const { id = "nova" } = useParams<"id">();
-
-  //   const [searchParams, setSearchParams] = useSearchParams();
-  //   const { debounce } = useDebounce();
   const navigate = useNavigate();
-
-  //   const [rows, setRows] = useState<IListagemPessoa[]>([]);
-  //   const [totalCount, setTotalCount] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [nome, setNome] = useState("");
 
@@ -64,7 +60,6 @@ export const DetalheDePessoas: React.FC = () => {
           mostrarBotaoSalvarEFechar
           mostrarBotaoNovo={id !== "nova"}
           mostrarBotaoApagar={id !== "nova"}
-          //-------------------------Ação do botoes
           aoClicarEmSalvar={handleSave}
           aoClicarEmSalvarEFechar={handleSave}
           aoClicarEmApagar={() => handleDelete(Number(id))}
@@ -73,8 +68,13 @@ export const DetalheDePessoas: React.FC = () => {
         />
       }
     >
-      {isLoading && <LinearProgress variant="indeterminate" />}
-      <p>DetalheDePessoa {id}</p>
+      {/* Unform Lib de formulários leves e combináveis ​​com base em componentes ultraextensíveis.*/}
+      <Form onSubmit={(dados) => console.log(dados)}>
+        <VTextField name="nomeCompleto" />
+      </Form>
+
+      {/* {isLoading && <LinearProgress variant="indeterminate" />}
+      <p>DetalheDePessoa {id}</p> */}
     </LayoutBaseDepagina>
   );
 };

@@ -9,9 +9,6 @@ import {
 } from "../pages";
 import { ListagemDePessoas } from "../pages/pessoas/ListagemDePessoas";
 
-// import { DetalheDePessoas } from "../pages/pessoas/DetalheDePessoas";
-// import { DetalheDeCidade } from "../pages/cidades/DetalheDeCidade";
-
 export const AppRouter = () => {
   const { setDrawerOptions } = useDrawerContext();
 
@@ -43,10 +40,10 @@ export const AppRouter = () => {
       <Route path="/pessoas/detalhe/:id" element={<DetalheDePessoas />} />
 
       <Route path="/cidades" element={<ListagemDeCidade />} />
-      {/* <Route path="/cidades/detalhe/:id" element={<DetalheDeCidade />} /> */}
+      <Route path="/cidades/detalhe/:id" element={<DetalheDeCidade />} />
 
-      {/* <Route path="/pessoas/detalhe/:id" element={<DetalheDePessoas />} />
-      <Route path="/cidades/detalhe/:id" element={<DetalheDeCidade />} />  */}
+      <Route path="/pessoas/detalhe/:id" element={<DetalheDePessoas />} />
+      <Route path="/cidades/detalhe/:id" element={<DetalheDeCidade />} />
 
       <Route path="*" element={<Navigate to="/home" />} />
     </Routes>

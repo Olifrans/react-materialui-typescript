@@ -7,12 +7,6 @@
       "cidadeId": 13
     },
     {
-      "id": 14,
-      "nomeCompleto": "João Garcia",
-      "email": "olifrans@gmail.com",
-      "cidadeId": 14
-    },
-    {
       "id": 15,
       "nomeCompleto": "João Garcia",
       "email": "olifrans@gmail.com",
@@ -73,12 +67,6 @@
       "nomeCidade": "Agua Branca",
       "estado": "PI",
       "pessoaId": 13
-    },
-    {
-      "id": 14,
-      "nomeCidade": "Agua Branca",
-      "estado": "PI",
-      "pessoaId": 14
     },
     {
       "id": 15,
