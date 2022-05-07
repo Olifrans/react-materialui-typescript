@@ -84,6 +84,8 @@ export const ListagemDeCidade: React.FC = () => {
           mostrarInputBusca
           textoDaBusca={busca}
           textoBotaoNovo="Nova"
+          //-------------------------Editar detelhes da cidade
+          aoClicarEmNovo={() => navigate("/cidades/detalhe/nova")}
           //-------------------------Pagination
           aoMudarTextoDeBusca={(texto) =>
             setSearchParams({ busca: texto, pagina: "1" }, { replace: true })

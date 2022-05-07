@@ -1,24 +1,6 @@
 {
   "pessoas": [
     {
-      "id": 9,
-      "nomeCompleto": "João Oliveira",
-      "email": "olifrans@gmail.com",
-      "cidadeId": 9
-    },
-    {
-      "id": 11,
-      "nomeCompleto": "João Garcia",
-      "email": "olifrans@gmail.com",
-      "cidadeId": 11
-    },
-    {
-      "id": 12,
-      "nomeCompleto": "João Garcia",
-      "email": "olifrans@gmail.com",
-      "cidadeId": 12
-    },
-    {
       "id": 13,
       "nomeCompleto": "João Garcia",
       "email": "olifrans@gmail.com",
@@ -67,12 +49,6 @@
       "cidadeId": 20
     },
     {
-      "id": 21,
-      "nomeCompleto": "João Garcia",
-      "email": "olifrans@gmail.com",
-      "cidadeId": 21
-    },
-    {
       "id": 22,
       "nomeCompleto": "João Garcia",
       "email": "olifrans@gmail.com",
@@ -92,24 +68,6 @@
     }
   ],
   "cidades": [
-    {
-      "id": 9,
-      "nomeCidade": "Agua Branca",
-      "estado": "PI",
-      "pessoaId": 9
-    },
-    {
-      "id": 11,
-      "nomeCidade": "Agua Branca",
-      "estado": "PI",
-      "pessoaId": 11
-    },
-    {
-      "id": 12,
-      "nomeCidade": "Agua Branca",
-      "estado": "PI",
-      "pessoaId": 12
-    },
     {
       "id": 13,
       "nomeCidade": "Agua Branca",
@@ -157,12 +115,6 @@
       "nomeCidade": "Agua Branca",
       "estado": "PI",
       "pessoaId": 20
-    },
-    {
-      "id": 21,
-      "nomeCidade": "Agua Branca",
-      "estado": "PI",
-      "pessoaId": 21
     },
     {
       "id": 22,

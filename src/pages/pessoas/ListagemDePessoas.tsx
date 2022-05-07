@@ -87,6 +87,8 @@ export const ListagemDePessoas: React.FC = () => {
           mostrarInputBusca
           textoDaBusca={busca}
           textoBotaoNovo="Nova"
+          //-------------------------Editar detelhes da pessoa
+          aoClicarEmNovo={() => navigate("/pessoas/detalhe/nova")}
           //-------------------------Pagination
           aoMudarTextoDeBusca={(texto) =>
             setSearchParams({ busca: texto, pagina: "1" }, { replace: true })
@@ -112,19 +114,18 @@ export const ListagemDePessoas: React.FC = () => {
             {rows.map((row) => (
               <TableRow key={row.id}>
                 <TableCell>
-
                   {/* -------------------------Ação dos botões */}
                   <IconButton size="small" onClick={() => handleDelete(row.id)}>
                     <Icon>delete</Icon>
                   </IconButton>
                   <IconButton
                     size="small"
+                    //-------------------------Tela detalhe-> edição e criação de uma nova pessoa
                     onClick={() => navigate(`/pessoas/detalhe/${row.id}`)}
                   >
                     <Icon>edit</Icon>
                   </IconButton>
                   {/* -------------------------End ação dos botões */}
-                  
                 </TableCell>
                 <TableCell>{row.nomeCompleto}</TableCell>
                 <TableCell>{row.email}</TableCell>
