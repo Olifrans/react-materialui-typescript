@@ -11,9 +11,11 @@ import {
   TableFooter,
   LinearProgress,
   Pagination,
+  IconButton,
+  Icon,
 } from "@mui/material";
 import { useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import {
   CidadesServices,
   IListagemCidade,
@@ -21,11 +23,10 @@ import {
 import { useDebounce } from "../../shared/hooks";
 import { Environment } from "../../shared/environment";
 
-
-
 export const ListagemDeCidade: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const { debounce } = useDebounce();
+  const navigate = useNavigate();
   const [rows, setRows] = useState<IListagemCidade[]>([]);
   const [totalCount, setTotalCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
@@ -59,15 +60,30 @@ export const ListagemDeCidade: React.FC = () => {
     });
   }, [busca, pagina]);
 
+  //* -------------------------Ação do botão delete */
+  const handleDelete = (id: number) => {
+    if (confirm("Deseja apagar o dado?")) {
+      CidadesServices.deleteById(id).then((result) => {
+        if (result instanceof Error) {
+          alert(result.message);
+        } else {
+          setRows((oldRows) => [
+            ...oldRows.filter((oldRow) => oldRow.id !== id),
+          ]);
+          alert("Registro apagado com sucesso.");
+        }
+      });
+    }
+  };
+
   return (
     <LayoutBaseDepagina
       titulo="Listagem de cidades"
       barraDeFerramentas={
         <FerramentasDaListagem
-          mostrarInputBusca          
+          mostrarInputBusca
           textoDaBusca={busca}
           textoBotaoNovo="Nova"
-
           //-------------------------Pagination
           aoMudarTextoDeBusca={(texto) =>
             setSearchParams({ busca: texto, pagina: "1" }, { replace: true })
@@ -92,7 +108,19 @@ export const ListagemDeCidade: React.FC = () => {
           <TableBody>
             {rows.map((row) => (
               <TableRow key={row.id}>
-                <TableCell>Ações</TableCell>
+                <TableCell>
+                  {/* -------------------------Ação dos botões */}
+                  <IconButton size="small" onClick={() => handleDelete(row.id)}>
+                    <Icon>delete</Icon>
+                  </IconButton>
+                  <IconButton
+                    size="small"
+                    onClick={() => navigate(`/cidades/detalhe/${row.id}`)}
+                  >
+                    <Icon>edit</Icon>
+                  </IconButton>
+                  {/* -------------------------End ação dos botões */}
+                </TableCell>
                 <TableCell>{row.nomeCidade}</TableCell>
                 <TableCell>{row.estado}</TableCell>
               </TableRow>
@@ -130,7 +158,6 @@ export const ListagemDeCidade: React.FC = () => {
               </TableRow>
             )}
             {/*-------------------------End Pagination*/}
-
           </TableFooter>
         </Table>
       </TableContainer>

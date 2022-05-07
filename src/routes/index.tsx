@@ -32,8 +32,8 @@ export const AppRouter = () => {
       <Route path="/home" element={<Dashboard />} />
       <Route path="/pessoas" element={<ListagemDePessoas />} />
       <Route path="/cidades" element={<ListagemDeCidade />} />
-      {/* <Route path="/pessoas/detalhe/:id" element={<ListagemDePessoas />} /> */}
-      {/* <Route path="/cidades/detalhe/:id" element={<ListagemDeCidade />} /> */}
+      <Route path="/pessoas/detalhe/:id" element={<DetalheDePessoas />} />
+      <Route path="/cidades/detalhe/:id" element={<DetalheDeCidade />} /> 
 
       <Route path="*" element={<Navigate to="/home" />} />
     </Routes>
