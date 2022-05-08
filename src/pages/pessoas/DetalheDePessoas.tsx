@@ -1,13 +1,19 @@
-import { useParams } from "react-router-dom";
 import { FerramentasDeDetalhe } from "../../shared/components";
 import { LayoutBaseDepagina } from "../../shared/layouts";
 
-import { useEffect, useMemo, useState } from "react";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { PessoasServices } from "../../shared/services/api/pessoas/PessoasServices";
 import { LinearProgress, TextField } from "@mui/material";
 import { Form } from "@unform/web";
 import { VTextField } from "../../shared/forms";
+import { FormHandles } from "@unform/core";
+
+interface IFormData {
+  email: string;
+  nomeCompleto: string;
+  cidadeId: string;
+}
 
 export const DetalheDePessoas: React.FC = () => {
   const { id = "nova" } = useParams<"id">();
@@ -15,8 +21,10 @@ export const DetalheDePessoas: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [nome, setNome] = useState("");
 
-  const handleSave = () => {
-    console.log("Save");
+  const formRef = useRef<FormHandles>(null);
+
+  const handleSave = (dados: IFormData) => {
+    console.log(dados);
   };
 
   useEffect(() => {
@@ -60,17 +68,19 @@ export const DetalheDePessoas: React.FC = () => {
           mostrarBotaoSalvarEFechar
           mostrarBotaoNovo={id !== "nova"}
           mostrarBotaoApagar={id !== "nova"}
-          aoClicarEmSalvar={handleSave}
-          aoClicarEmSalvarEFechar={handleSave}
           aoClicarEmApagar={() => handleDelete(Number(id))}
           aoClicarEmVoltar={() => navigate("/pessoas")}
+          aoClicarEmSalvar={() => formRef.current?.submitForm()}
           aoClicarEmNovo={() => navigate("/pessoas/detalhe/nova")}
+          aoClicarEmSalvarEFechar={() => formRef.current?.submitForm()}
         />
       }
     >
-      {/* Unform Lib de formulários leves e combináveis ​​com base em componentes ultraextensíveis.*/}
-      <Form onSubmit={(dados) => console.log(dados)}>
+      {/* Form da Lib  Unform formulários leves e combináveis ​​com base em componentes ultraextensíveis. */}
+      <Form ref={formRef} onSubmit={handleSave}>
         <VTextField name="nomeCompleto" />
+        <VTextField name="email" />
+        <VTextField name="cidadeId" />
       </Form>
 
       {/* {isLoading && <LinearProgress variant="indeterminate" />}

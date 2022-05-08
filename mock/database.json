@@ -1,12 +1,6 @@
 {
   "pessoas": [
     {
-      "id": 13,
-      "nomeCompleto": "João Garcia",
-      "email": "olifrans@gmail.com",
-      "cidadeId": 13
-    },
-    {
       "id": 15,
       "nomeCompleto": "João Garcia",
       "email": "olifrans@gmail.com",
@@ -62,12 +56,6 @@
     }
   ],
   "cidades": [
-    {
-      "id": 13,
-      "nomeCidade": "Agua Branca",
-      "estado": "PI",
-      "pessoaId": 13
-    },
     {
       "id": 15,
       "nomeCidade": "Agua Branca",
